@@ -1,0 +1,228 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Tools</title>
+    <link rel="stylesheet" href="foundation/css/foundation.css">
+    <link rel="stylesheet" href="foundation/css/app.css">
+    <script src="ckeditor/ckeditor.js"></script>
+  </head>
+
+<body >
+  <div class="top-bar" id="main-menu">
+  <div class="top-bar-left">
+    <ul class="dropdown menu" data-dropdown-menu="" role="menubar" data-dropdownmenu="vyfl4j-dropdownmenu">
+      <li class="menu-text" role="menuitem" tabindex="0">CMS Tools</li>
+    </ul>
+  </div>
+
+</div>
+  <div class="row" style="padding-top: 1.5em; padding-left: 2em;">
+    <div class="columns medium-6 ">
+  <form>
+    <div class="row">
+      <div class="columns medium-5">
+Tag: <select id="tag">
+  <option value="p">Paragraph</option>
+  <option value="ul">Unordered List</option>
+  <option value="ol">Ordered List</option>
+  <!--<option value="dl">Description List</option>-->
+  <option value="a">Anchor / Link</option>
+  <option value="img">Image</option>
+  <option value="strong">Bold</option>
+  <option value="span">Span</option>
+  <option value="blockquote">Quote</option>
+
+</select>
+</div>
+<div class="columns medium-2 text-center" style="padding-top:1.5em;"> <strong>OR:</strong>
+</div>
+<div class="columns medium-5">
+  Custom Tag:<input type="text" id="custom-tag" />
+</div>
+</div>
+<div class="row">
+  <div class="columns medium-12">
+    <ul class="accordion" data-accordion data-allow-all-closed="true">
+      <li class="accordion-item " data-accordion-item>
+        <a href="#" class="accordion-title">Attributes</a>
+        <div class="accordion-content" data-tab-content>
+<fieldset class="fieldset">
+  <legend>Attributes:</legend>
+
+<div class="row">
+  <div class="columns medium-6">
+id= <input id="id-attr" type="text" />
+</div>
+<div class="columns medium-6">
+
+class= <input id="class-attr" type="text" />
+</div>
+
+</div>
+
+<!--<ul class="accordion" data-accordion>
+  <li class="accordion-navigation">
+    <a href="#panel1a">Accordion 1</a>
+    <div id="panel1a" class="content active">
+      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </li>-->
+  <ul class="accordion" data-accordion data-allow-all-closed="true">
+    <li class="accordion-item " data-accordion-item>
+      <a href="#" class="accordion-title"><strong>Tag Specific Attributes:</strong></a>
+      <div class="accordion-content" data-tab-content>
+  cite= <input id="cite-attr" type="text" />
+src= <input id="src-attr" type="text" />
+
+
+<div class="row a-spec-attr">
+  <div class="columns medium-8">
+href= <input id="href-attr" type="text" />
+</div>
+<div class="columns medium-4">
+target=
+<select id="target-attr">
+  <option value="_self">Same Window</option>
+  <option value="_blank">New Window</option>
+  <option value="_parent">Parent Window</option>
+  <option value="_top">Full Window</option>
+
+</select>
+</div>
+</div>
+<div class="row">
+  <div class="column medium-6">
+List style:
+<select id="list-style-attr">
+  <option value=""></option>
+  <option value="list-style-type:decimal">Decimal</option>
+  <option value="list-style-type:decimal-leading-zero">Decimal - Leading Zero</option>
+  <option value="list-style-type:lower-alpha">Lower Alpha</option>
+  <option value="list-style-type:upper-alpha">Upper Alpha</option>
+  <option value="list-style-type:lower-roman">Lower Roman</option>
+  <option value="list-style-type:upper-roman">Upper Roman</option>
+</select>
+</div>
+</div>
+</div>
+</li>
+
+
+<ul class="accordion" data-accordion data-allow-all-closed="true">
+  <li class="accordion-item " data-accordion-item>
+    <a href="#" class="accordion-title"><strong>custom attributes:</strong></a>
+    <div class="accordion-content" data-tab-content>
+<div class="row">
+  <div class="columns medium-6">
+attr 1: <input id="custom1-attr" type="text" />
+</div>
+
+<div class="columns medium-6">value: <input id="custom1-val" type="text" />
+</div>
+</div>
+<div class="row">
+<div class="columns medium-6">attr 2: <input id="custom2-attr" type="text" /> </div>
+  <div class="columns medium-6">value: <input id="custom2-val" type="text" /></div>
+</div>  <div class="row">
+<div class="columns medium-6">attr 3: <input id="custom3-attr" type="text" /> </div>
+  <div class="columns medium-6">value: <input id="custom3-val" type="text" /></div></div>
+</fieldset>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+
+<!--Custom pattern:<br>
+<textarea cols="60" rows="7" id="custom-pattern">
+</textarea><br><br>-->
+</div>
+<div class="row">
+<div class="columns medium-12">
+
+  <ul class="accordion" data-accordion data-allow-all-closed="true">
+    <li class="accordion-item " data-accordion-item>
+      <a href="#" class="accordion-title">Rich Text</a>
+      <div class="accordion-content" data-tab-content>
+        <form>
+              <textarea name="editor1" id="editor1" rows="10" cols="80">
+
+              </textarea>
+              <script>
+                  // Replace the <textarea id="editor1"> with a CKEditor
+                  // instance, using default configuration.
+                  CKEDITOR.replace( 'editor1' );
+              </script>
+          </form>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="columns medium-12">
+    <h3>Rendered HTML:</h3>
+
+    <iframe id="iframe" src="iframe.html" width="100%" height="300px";></iframe>
+
+  </div>
+</div>
+</div>
+
+
+<div class="row">
+  <div class="columns medium-4 small-offset-1">
+
+      Examples:
+      <select id="examples">
+        <option value="blank"></option>
+        <option value="button">Button</option>
+        <option value="threeColumn">3 column</option>
+        <option value="threeNineColumn">3 - 9 column</option>
+        <option value="twoColumn">2 column</option>
+        <!--<option value="_parent">3 column 2 row</option>
+        <option value="accordion">Accordion</option>-->
+
+      </select>
+Text:
+<textarea cols="60" rows="7" id="data">
+</textarea>
+
+
+<button id="data-btn" class="button">Convert</button>
+<button id="clear-btn" class="button alert">Clear</button>
+
+
+<br>
+Code:<br>
+<textarea cols="60" rows="7" id="data-complete"></textarea>
+
+
+
+
+
+
+</div>
+</div>
+
+</form>
+</div>
+</div>
+
+
+
+
+
+
+<script src="foundation/js/vendor/jquery.js"></script>
+<script src="foundation/js/vendor/what-input.js"></script>
+<script src="foundation/js/vendor/foundation.js"></script>
+<script src="foundation/js/vendor/foundation.accordion.js"></script>
+<script src="foundation/js/app.js"></script>
+<script src="tool.js" ></script>
+</body>
+</html>
