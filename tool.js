@@ -8,14 +8,40 @@ var closingTag = "";
 var bTag = "";
 var eTag = "";
 
-document.getElementById("clear-btn").onclick = (function convert() {
+document.getElementById("validate-btn").onclick = (function convert() {
+  var errMessage = "";
+  var html = document.getElementById("data-complete").value;
+  if( ((html.split("'").length - 1) % 2) != 0) {
+    console.log('missing or extra single qoute');
+    errMessage += ' missing or extra qoute,';
+  }
+  if( ((html.split('"').length - 1) % 2) != 0) {
+    console.log('missing or extra double qoute');
+    errMessage += ' missing or extra double qoute,';
+  }
+  if( ((html.split("<").length - 1) % 2) != 0) {
+    console.log('missing "<", ');
+    errMessage += 'missing "<", ';
+  }
+  if( ((html.split(">").length - 1) % 2) != 0) {
+    console.log('missing ">", ');
+    errMessage += 'missing ">", ';
+  }
+  if(errMessage == "") {
+    errMessage = "HTML is clean";
+  }
+  document.getElementById("validate-message").innerHTML = errMessage;
+});
+
+document.getElementById("clear-btn").onclick = (function convert1() {
   document.getElementById("data-complete").innerHTML = "";
+  document.getElementById("validate-message").innerHTML = "";
   //$('#iframe').contents().find('body').replaceWith("<body></body>");
   document.getElementById('iframe').contentWindow.location.reload();
 });
 
 
-document.getElementById("data-btn").onclick = (function convert() {
+document.getElementById("data-btn").onclick = (function convert2() {
   var tag = document.getElementById("custom-tag").value;
   var custTag = true;
   if(tag == "") {
