@@ -40,6 +40,23 @@ document.getElementById("clear-btn").onclick = (function convert1() {
   document.getElementById('iframe').contentWindow.location.reload();
 });
 
+//TODO fix send code button from closing accordion when clicked
+
+  document.getElementById("send-code-btn").onclick = (function convert5() {
+    //document.getElementById("data-complete").innerHTML = "";
+    //document.getElementById("validate-message").innerHTML = "";
+    //document.getElementById('iframe').contentWindow.location.reload();
+
+    //var codeFromRT = CKEDITOR.instances.editor1.getData();
+    //var codeFromRT = document.getElementById("editor1").value;
+    console.log(CKEDITOR.instances.editor1.getData());
+    //document.getElementById("data-complete").innerHTML = codeFromRT;
+    //$('#iframe').contents().find('body').append(codeFromRT);
+
+
+  //});
+});
+
 
 document.getElementById("data-btn").onclick = (function convert2() {
   var tag = document.getElementById("custom-tag").value;
@@ -257,7 +274,7 @@ document.getElementById("data-btn").onclick = (function convert2() {
           </div>
         </li>
       </ul>`;
-      
+
     }
     document.getElementById("data-complete").innerHTML = z;
   }
