@@ -8,16 +8,32 @@ var closingTag = "";
 var bTag = "";
 var eTag = "";
 
+/*
+   ValifationCode:
+
+*/
 document.getElementById("validate-btn").onclick = (function convert() {
   var errMessage = "";
   var html = document.getElementById("data-complete").value;
   if( ((html.split("'").length - 1) % 2) != 0) {
-    console.log('missing or extra single qoute');
-    errMessage += ' missing or extra qoute,';
+    if ((html.split('=').length *2) > (html.split("'").length + html.split('"').length)) {
+          console.log('missing single qoute');
+          errMessage += ' missing single qoute,';
+      }
+    else {
+          console.log('extra single qoute');
+          errMessage += ' extra single qoute,';
+     }
   }
   if( ((html.split('"').length - 1) % 2) != 0) {
-    console.log('missing or extra double qoute');
-    errMessage += ' missing or extra double qoute,';
+    if ((html.split('=').length *2) > (html.split("'").length + html.split('"').length)) {
+          console.log('missing double qoute');
+          errMessage += ' missing double qoute,';
+      }
+    else {
+          console.log('extra double qoute');
+          errMessage += ' extra double qoute,';
+     }
   }
   if( ((html.split("<").length - 1) % 2) != 0) {
     console.log('missing "<", ');
