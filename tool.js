@@ -42,7 +42,7 @@ document.getElementById("clear-btn").onclick = (function convert1() {
 
 //TODO fix send code button from closing accordion when clicked
 
-  document.getElementById("send-code-btn").onclick = (function convert5() {
+/* document.getElementById("send-code-btn").onclick = (function convert5() {
     //document.getElementById("data-complete").innerHTML = "";
     //document.getElementById("validate-message").innerHTML = "";
     //document.getElementById('iframe').contentWindow.location.reload();
@@ -55,7 +55,7 @@ document.getElementById("clear-btn").onclick = (function convert1() {
 
 
   //});
-});
+});*/
 
 
 document.getElementById("data-btn").onclick = (function convert2() {
@@ -148,15 +148,15 @@ document.getElementById("data-btn").onclick = (function convert2() {
       break;
     case "ul":
       var listType = "ul";
-      openingTag = "<" + listType + " " + attrString + listStyle + ">";
-      closingTag = "</ul>";
+      openingTag = "<" + listType + " " + attrString + listStyle + ">\n";
+      closingTag = "\n</ul>";
       bTag = "<li>";
       eTag = "</li>";
       break;
     case "ol":
       var listType = "ol";
-      openingTag = "<" + listType + " " + attrString + listStyle + ">";
-      closingTag = "</ul>";
+      openingTag = "<" + listType + " " + attrString + listStyle + ">\n";
+      closingTag = "\n</ul>";
       bTag = "<li>";
       eTag = "</li>";
       break;
@@ -205,7 +205,7 @@ document.getElementById("data-btn").onclick = (function convert2() {
 
   //**** TODO FIX EMPTY END TAGS
   var y = x.replace(del, eTag + bTag);
-  var yy = x.split('\n').join(eTag + bTag);
+  var yy = x.split('\n').join(eTag + '\n' + bTag);
 
   //console.log("btn pressed");
   var z = bTag + yy + eTag;
